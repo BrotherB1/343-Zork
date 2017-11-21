@@ -2,7 +2,7 @@
 from Neighborhood import Neighborhood
 from Player import Player
 
-
+"""The Game class that controls all movement and actions taken. Created by Luke Bassett with help from Brendan Cronan and Python Documentation https://docs.python.org/3/ Fall 2017"""
 class Game():
 
 	player = Player()
@@ -15,9 +15,7 @@ class Game():
 		self.Hood = Neighborhood()
 		self.won = False
 		
-	def my_func(self):	
-		print(self.player.health)
-
+	"""Method that controls all movement as well as miscellaneous commands while in the neighborhood"""
 	def move(self):
 		loop = 4
 		while loop == 4:
@@ -55,7 +53,9 @@ class Game():
 			elif first == "info":
 				self.player.status()
 				self.player.Inventory()
-
+				print("Total number of Monsters still in the Neighborhood: ")
+				i =self.Hood.getMonsterNumber()
+				print(i)
 			else:
 				print("Please enter a valid direction")
 			pos = self.Hood.getPos(self.xPos, self.yPos)
@@ -70,7 +70,7 @@ class Game():
 				else:
 					print("\n")
 				
-
+	"""Method that ends the game, win or lose"""
 	def end(self):
 		if self.won == True:
 			print("Congradulations! You've won the game!")
@@ -79,15 +79,7 @@ class Game():
 		import os
 		quit(1)
 
-	def getHood(self):
-		print("The Neighborhood has (H)ouses, (Y)ards, and (S)treets")
-		print("H Y H Y H Y H Y H")
-		print("Y S S S S S S S Y")
-		print("H S S S S S S S H")
-		print("Y S S Y Y Y S S Y")
-		print("H S S H Y H S S H")
-		print("Y S S Y Y H S S H")
-
+	"""Method that controls the attack phase inside of a house. Parameters xPos and yPos are the positions to grab the house object ffrom the neighborhood"""
 	def attackPhase(self, xPos, yPos):
 		print("You've entered the house! Your current stats are:")
 		#self.player.status()
@@ -161,11 +153,14 @@ class Game():
 				if self.Hood.getHouse(xPos,yPos).clear():
 					print("You cleared the house! The people are thankful and have given you more items!")
 					i = self.Hood.getHouse(xPos,yPos).getNumMonsters()
+					if(self.Hood.getMonsterNumber() <= 0):
+						self.won = True
+						self.end()
 					self.player.generateItems(i)
 					self.Hood.setLocation(xPos, yPos)
 					self.loop = 7
 				
-print("Welcome to your hometown of Zork! You've woken up this morning only to discover the neighborhood has been overrun with monsters! You still have a mix of Hershey Kisses, Chocolate Bars, Sour Straws and Nerd Bombs to help you defend your home town. You currently stand in front of a house. Type 'west' to approach the house!")
+print("Welcome to your hometown of Zork! You've woken up this morning only to discover the neighborhood has been overrun with monsters! You still have a mix of Hershey Kisses, Chocolate Bars, Sour Straws and Nerd Bombs to help you defend your home town. You currently stand in front of a house. Type 'west' to approach the house! If you ever feel lost, type 'help' and a list of instructions will appear to help guide you!")
 
 g = Game()
 g.move()

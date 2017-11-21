@@ -1,5 +1,6 @@
 #code given by Ira Woodring
 
+"""Class that controls methods for object that are being watched"""
 class Observable(object):
 
         def __init__(self):    
@@ -19,3 +20,7 @@ class Observable(object):
         def update_observers(self, monster):
                 for observer in self.observers:
                         observer.update(monster)
+
+	def update_observer(self, house):
+		for observer in self.observers:
+			observer.update(house)

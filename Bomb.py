@@ -1,6 +1,6 @@
 import random
 
-"""Class for Nerd Bomb. Uses basic getters."""
+"""Class for Nerd Bomb. Uses basic getters. Created by Luke Bassett Fall 2017"""
 class Bomb:
 	
 	def __init__(self):

@@ -1,12 +1,7 @@
 from Observable import Observable
 
-"""Monster class to control the monserts and people alike!"""
+"""Monster class to control the monserts and people alike! Created by Luke Bassett with help from Brendan Cronan Fall 2017"""
 class Monster(Observable):
-	def __init__ (self):
-		self.health = 50
-		self.atk = 10
-		self.name = "Monster"
-		self.dead = False
 
 	"""Getters that all of the Monsters are able to use"""
 	def getHealth(self):

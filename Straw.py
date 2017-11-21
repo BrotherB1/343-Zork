@@ -1,6 +1,6 @@
 import random
 
-"""Class for Sour Straw. Uses basic getters."""
+"""Class for Sour Straw. Uses basic getters. Created by Luke Bassett Fall 2017"""
 class Straw:
 	
 	def __init__(self):

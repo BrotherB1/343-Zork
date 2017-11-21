@@ -1,7 +1,7 @@
 from Monster import Monster
 import random
 
-"""These are so overrated... Zombie class to hold the information of the undead!"""
+"""These are so overrated... Zombie class to hold the information of the undead! Created by Luke Bassett Fall 2017"""
 class Zombie(Monster):
 	
 	def __init__(self):

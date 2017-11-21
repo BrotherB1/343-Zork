@@ -1,13 +1,14 @@
 from House import House
 from Observer import Observer
 
-"""Class for the Neighborhood that will create the same object each time"""
+"""Class for the Neighborhood that will create the same layout each time. Created by Luke Bassett with help from Brendan Cronan and Python Documenation at https://docs.python.org/3/ Fall 2017"""
 class Neighborhood(Observer):
 	hood = [[0 for y in range(14)] for x in range(10)]
 
 
 	#This method constructs the neighborhood in a specific way, that way the game will be the same each time.
 	def __init__(self):
+		self.monster_count = 0
 		self.hood = [[0 for y in range(15)] for x in range(10)]
 		for a in range(0, 10):
 			
@@ -45,7 +46,8 @@ class Neighborhood(Observer):
 					self.hood[4][14] = House()
 				if isinstance(self.hood[a][b], House):
 					self.hood[a][b].setObservers() 
-		 
+		 			self.monster_count = self.monster_count + self.hood[a][b].getNumMonsters()
+					self.hood[a][b].add_observer(self)
 	
 
 	#gets the current position
@@ -66,13 +68,17 @@ class Neighborhood(Observer):
 	def setLocation(self, xPos, yPos):
 		self.hood[xPos][yPos] = "H"
 
-	#gets the house object for the Game class
+	def getMonsterNumber(self):
+		
+		return self.monster_count
+		
+	#gets the house object for the Game class. Parameters of xPos and yPos as the position in the neighborhood to get the house object from.
 	def getHouse(self, xPos, yPos):
 		return self.hood[xPos][yPos]
 
 	#updates the number of monsters
-	def update(self, monster):
-		self.monsterNum = self.monsterNum - 1
-		if (self.monsterNum == 0):
+	def update(self, house):
+		self.monster_count = self.monster_count - 1
+		if (self.monster_count == 0):
 			pass
 

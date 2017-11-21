@@ -4,7 +4,7 @@ from Bomb import Bomb
 from Kiss import Kiss
 import random
 
-"""This is the class for the player. Keeps track of our youth and vitality!"""
+"""This is the class for the player. Keeps track of our youth and vitality! Created by Luke Bassett Fall 2017"""
 class Player:
 	
 	"""Starts by making starting stats as well as a beginning random inventory"""

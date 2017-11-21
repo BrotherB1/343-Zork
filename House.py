@@ -8,7 +8,7 @@ from Observer import Observer
 from Observable import Observable
 import random
 
-"""Class for our beloved houses."""
+"""Class for our beloved houses. Created by Luke Bassett with help from Brendan Cronan and Python Documenation at https://docs.python.org/3/ Fall 2017"""
 class House(Observer, Observable):
 	def __init__(self):
 		#List of monsters in the house
@@ -71,4 +71,4 @@ class House(Observer, Observable):
 		if isinstance(monster, Monster):
 			self.mon.remove(monster)
 			self.mon.append(Person())
-		self.update_observers(monster)
+		self.update_observer(self)

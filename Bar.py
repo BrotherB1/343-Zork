@@ -1,6 +1,6 @@
 import random
 
-"""Class for Chocolate Bar. Uses basic getters."""
+"""Class for Chocolate Bar. Uses basic getters. Created by Luke Bassett Fall 2017"""
 class Bar:
 	
 	def __init__(self):

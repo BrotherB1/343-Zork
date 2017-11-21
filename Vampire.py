@@ -1,7 +1,7 @@
 from Monster import Monster
 import random
 
-"""Vampire class to help keep track of their cavities as they fight"""
+"""Vampire class to help keep track of their cavities as they fight"Created by Luke Bassett Fall 2017"""
 class Vampire(Monster):
 	
 	def __init__(self):

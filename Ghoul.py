@@ -1,7 +1,7 @@
 from Monster import Monster
 import random
 
-"""Ick, little, angry garden gnomes. Ghoul class to keep track of their tiny selves!"""
+"""Ick, little, angry garden gnomes. Ghoul class to keep track of their tiny selves!"Created by Luke Bassett Fall 2017"""
 class Ghoul(Monster):
 	
 	def __init__(self):

@@ -1,6 +1,6 @@
 import random
 
-"""Class for Hershey Kiss. Uses basic getters."""
+"""Class for Hershey Kiss. Uses basic getters. Created by Luke Bassett Fall 2017"""
 class Kiss:
 	
 	def __init__(self):

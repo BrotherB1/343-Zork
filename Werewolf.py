@@ -1,7 +1,7 @@
 from Monster import Monster
 import random
 
-"""Being a Bassett, I can identify with dogs! Werewolf class to keep their powerful stats"""
+"""Being a Bassett, I can identify with dogs! This is a Werewolf class to keep their powerful stats. Created by Luke Bassett Fall 2017"""
 class Werewolf(Monster):
 	
 	def __init__(self):
